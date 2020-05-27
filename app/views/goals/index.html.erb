@@ -1,0 +1,10 @@
+<div class="container py-5">
+  <h1><%= current_user %>'s Goals</h1>
+
+  <% @goals.each do |g| %>
+    <li><%= g.name %></li>
+  <% end %>
+
+
+   <%= link_to "Create a new Goal", new_goal_path %>
+</div>
