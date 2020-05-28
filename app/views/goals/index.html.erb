@@ -1,10 +1,20 @@
-<div class="container py-5">
-  <h1><%= current_user %>'s Goals</h1>
+<div class="container justify-content-center">
+  <div class="row mx-auto">
+    <div class="col text-center py-5">
+      <h1><%= current_user %>'s Goals</h1>
 
-  <% @goals.each do |g| %>
-    <li><%= g.name %></li>
-  <% end %>
-
-
-   <%= link_to "Create a new Goal", new_goal_path %>
+      <% @goals.each do |g| %>
+        <li><%= link_to "#{g.name}", goal_path(g) %></li>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+    <div class="col text-center">
+      <div>
+        <%= link_to "Create a new Goal", new_goal_path %>
+      </div>
+      <div>
+        <%= link_to "Home", root_path %>
+      </div>
+    </div>
 </div>
